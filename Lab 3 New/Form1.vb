@@ -14,8 +14,30 @@ Public Class frmAverageEmployee
     Private Const MIN_VALUE = 0
 
     Dim currentDay As Integer = 0
-    Dim runningTotal As Integer = 0
+    Dim employeeCounter As Integer = 0
+    Dim dayCounter As Integer = 0
+    Dim empUnits(2, 6) As Integer
+    Dim averageEmp1 As Double
+    Dim averageEmp2 As Double
+    Dim averageEmp3 As Double
+    Dim finalAverage As Double
 
+    ''' <summary>
+    ''' Here in this function we will calcualte the avergae of the input form the user and also we will use the arrays for that 
+    ''' Whenever we will calculate the average we will just call the function for the calculation purpose.
+    ''' </summary>
+    ''' <param name="employeeIndex"></param>
+    ''' <returns></returns>
+
+    Function averageDisplay(ByVal employeeIndex As Integer) As Double
+        Dim sum As Integer = 0
+
+        For daycounter As Integer = 0 To empUnits.GetUpperBound(1)
+            sum += empUnits(employeeIndex, daycounter)
+
+        Next
+        Return sum / 7
+    End Function
 
     ''' <summary>
     ''' In this sub procedure i will reset the form to its oiginal state, user can enter reset button whenever he wants. 
@@ -32,8 +54,7 @@ Public Class frmAverageEmployee
         txtUnitEntered.Focus()
         btnEnter.Enabled = True
         currentDay = 1
-        runningTotal = 0
-
+        txtUnitEntered.ReadOnly = False
 
     End Sub
 
@@ -49,125 +70,73 @@ Public Class frmAverageEmployee
 
     ''' <summary>
     ''' This event handler is the main button in the form, execution will perfomr all the major function in the form including calculating average. IN this event only all
-    ''' the validation will aslo occur and message showing the error will also be shown. 
+    ''' the validation will aslo occur and message showing the error will also be shown. All the if else statements handle all the working
+    ''' in the enter event handler. 
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
 
-    Private Sub btnCalculate_Click(sender As Object, e As EventArgs) Handles btnEnter.Click
+    Private Sub btnEnter_Click(sender As Object, e As EventArgs) Handles btnEnter.Click
         Dim userInput As String = txtUnitEntered.Text
         Dim inputAsInt As Integer
-        Dim averageEmp1 As Double
-        Dim averageEmp2 As Double
-        Dim averageEmp3 As Double
-        Dim empDay1(0, 6) As Integer
-        Dim empDay2(0, 6) As Integer
-        Dim empDay3(0, 6) As Integer
+        txtUnitEntered.Text = ""
 
 
-        For counter As Integer = 0 To empDay1.GetUpperBound(0)
+        If IsNumeric(userInput) Then
+            inputAsInt = CInt(userInput)
+            currentDay += 1
+            lblDay.Text = "Day " + (dayCounter + 1).ToString
 
-            If IsNumeric(userInput) Then
-                inputAsInt = CInt(userInput)
-                currentDay += 1
-                lblDay.Text = "Day " + currentDay.ToString
+            If inputAsInt.ToString = userInput Then
+                If inputAsInt >= MIN_VALUE And inputAsInt <= MAX_VALUE Then
 
-                If inputAsInt.ToString = userInput Then
-                    If inputAsInt >= MIN_VALUE And inputAsInt <= MAX_VALUE Then
-
-                        runningTotal += inputAsInt
+                    empUnits(employeeCounter, dayCounter) = inputAsInt
+                    If employeeCounter = 0 Then
                         txtEmpList1.Text += userInput + vbCrLf
-
-                    Else
-                        MessageBox.Show("Please enter a number in range")
-                        txtUnitEntered.Focus()
-
                     End If
-                Else
-                    MessageBox.Show("Please enter a  whole number")
-                    txtUnitEntered.Focus()
-                End If
-
-            Else
-                MessageBox.Show("Please enter a number")
-                txtUnitEntered.Focus()
-
-            End If
-
-        Next
-        averageEmp1 = runningTotal / 7
-        lblEmpOutput1.Text = averageEmp1.ToString
-
-        currentDay = 1
-
-        For counter As Integer = 0 To empDay2.GetUpperBound(0)
-
-            If IsNumeric(userInput) Then
-                inputAsInt = CInt(userInput)
-                currentDay += 1
-                lblDay.Text = "Day " + currentDay.ToString
-
-                If inputAsInt.ToString = userInput Then
-                    If inputAsInt >= MIN_VALUE And inputAsInt <= MAX_VALUE Then
-
-                        runningTotal += inputAsInt
+                    If employeeCounter = 1 Then
                         txtEmpList2.Text += userInput + vbCrLf
-
-                    Else
-                        MessageBox.Show("Please enter a number in range")
-                        txtUnitEntered.Focus()
-
                     End If
-                Else
-                    MessageBox.Show("Please enter a  whole number")
-                    txtUnitEntered.Focus()
-                End If
-
-            Else
-                MessageBox.Show("Please enter a number")
-                txtUnitEntered.Focus()
-
-            End If
-
-        Next
-        averageEmp2 = runningTotal / 7
-        lblEmpOutput2.Text = averageEmp2.ToString
-
-        currentDay = 1
-        For counter As Integer = 0 To empDay3.GetUpperBound(0)
-
-            If IsNumeric(userInput) Then
-                inputAsInt = CInt(userInput)
-                currentDay += 1
-                lblDay.Text = "Day " + currentDay.ToString
-
-                If inputAsInt.ToString = userInput Then
-                    If inputAsInt >= MIN_VALUE And inputAsInt <= MAX_VALUE Then
-
-                        runningTotal += inputAsInt
+                    If employeeCounter = 2 Then
                         txtEmpList3.Text += userInput + vbCrLf
+                    End If
+                    dayCounter += 1
 
-                    Else
-                        MessageBox.Show("Please enter a number in range")
-                        txtUnitEntered.Focus()
+                    If dayCounter = 7 Then
+                        If employeeCounter = 0 Then
+                            averageEmp1 = averageDisplay(employeeCounter)
+                            lblEmpOutput1.Text = "Average: " & Math.Round(averageEmp1, 2).ToString
+                        End If
 
+                        If employeeCounter = 1 Then
+                            ' txtEmpList2.Text += userInput + vbCrLf
+                            averageEmp2 = averageDisplay(employeeCounter)
+                            lblEmpOutput2.Text = "Average: " & Math.Round(averageEmp2, 2).ToString
+                        End If
+                        If employeeCounter = 2 Then
+                            '  txtEmpList3.Text += userInput + vbCrLf
+                            averageEmp3 = averageDisplay(employeeCounter)
+                            lblEmpOutput3.Text = "Average: " & Math.Round(averageEmp3, 2).ToString
+                            finalAverage = (averageEmp1 + averageEmp2 + averageEmp3) / 3
+                            lblAvgOutput.Text = "Average per day: " & Math.Round(finalAverage, 2).ToString
+                            btnEnter.Enabled = False
+                            txtUnitEntered.ReadOnly = True
+                        End If
+                        employeeCounter += 1
+                        dayCounter = 0
                     End If
                 Else
-                    MessageBox.Show("Please enter a  whole number")
+                    MessageBox.Show("Please enter a number in range")
                     txtUnitEntered.Focus()
                 End If
-
             Else
-                MessageBox.Show("Please enter a number")
+                MessageBox.Show("Please enter a  whole number")
                 txtUnitEntered.Focus()
-
             End If
-
-        Next
-        averageEmp3 = runningTotal / 7
-        lblEmpOutput3.Text = averageEmp3.ToString
-
-
+        Else
+            MessageBox.Show("Please enter a number")
+            txtUnitEntered.Focus()
+        End If
     End Sub
 
     ''' <summary>

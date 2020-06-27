@@ -192,6 +192,7 @@ Partial Class frmAverageEmployee
         '
         'btnReset
         '
+        Me.btnReset.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnReset.Location = New System.Drawing.Point(232, 359)
         Me.btnReset.Name = "btnReset"
         Me.btnReset.Size = New System.Drawing.Size(100, 23)
@@ -202,9 +203,11 @@ Partial Class frmAverageEmployee
         '
         'frmAverageEmployee
         '
+        Me.AcceptButton = Me.btnEnter
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
+        Me.CancelButton = Me.btnReset
         Me.ClientSize = New System.Drawing.Size(601, 450)
         Me.Controls.Add(Me.btnReset)
         Me.Controls.Add(Me.btnExit)
