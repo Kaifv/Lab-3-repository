@@ -30,7 +30,7 @@ Public Class frmAverageEmployee
         lblEmpOutput3.Text = ""
         lblAvgOutput.Text = ""
         txtUnitEntered.Focus()
-        btnCalculate.Enabled = True
+        btnEnter.Enabled = True
         currentDay = 1
         runningTotal = 0
 
@@ -47,7 +47,14 @@ Public Class frmAverageEmployee
 
     End Sub
 
-    Private Sub btnCalculate_Click(sender As Object, e As EventArgs) Handles btnCalculate.Click
+    ''' <summary>
+    ''' This event handler is the main button in the form, execution will perfomr all the major function in the form including calculating average. IN this event only all
+    ''' the validation will aslo occur and message showing the error will also be shown. 
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+
+    Private Sub btnCalculate_Click(sender As Object, e As EventArgs) Handles btnEnter.Click
         Dim userInput As String = txtUnitEntered.Text
         Dim inputAsInt As Integer
         Dim averageEmp1 As Double
@@ -163,6 +170,11 @@ Public Class frmAverageEmployee
 
     End Sub
 
+    ''' <summary>
+    ''' Resetting the form by calling a sub procedure for this event handler. 
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
         resetForm()
 
