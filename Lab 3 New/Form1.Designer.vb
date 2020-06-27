@@ -74,7 +74,7 @@ Partial Class frmAverageEmployee
         '
         Me.lblEmp1.Location = New System.Drawing.Point(69, 117)
         Me.lblEmp1.Name = "lblEmp1"
-        Me.lblEmp1.Size = New System.Drawing.Size(100, 23)
+        Me.lblEmp1.Size = New System.Drawing.Size(127, 23)
         Me.lblEmp1.TabIndex = 3
         Me.lblEmp1.Text = "Employee 1"
         Me.lblEmp1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -83,8 +83,8 @@ Partial Class frmAverageEmployee
         '
         Me.lblEmp3.Location = New System.Drawing.Point(393, 117)
         Me.lblEmp3.Name = "lblEmp3"
-        Me.lblEmp3.Size = New System.Drawing.Size(100, 23)
-        Me.lblEmp3.TabIndex = 4
+        Me.lblEmp3.Size = New System.Drawing.Size(140, 23)
+        Me.lblEmp3.TabIndex = 9
         Me.lblEmp3.Text = "Employee 3"
         Me.lblEmp3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -92,8 +92,8 @@ Partial Class frmAverageEmployee
         '
         Me.lblEmp2.Location = New System.Drawing.Point(231, 117)
         Me.lblEmp2.Name = "lblEmp2"
-        Me.lblEmp2.Size = New System.Drawing.Size(100, 23)
-        Me.lblEmp2.TabIndex = 5
+        Me.lblEmp2.Size = New System.Drawing.Size(135, 23)
+        Me.lblEmp2.TabIndex = 6
         Me.lblEmp2.Text = "Employee 2"
         Me.lblEmp2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -104,18 +104,18 @@ Partial Class frmAverageEmployee
         Me.txtEmpList1.Multiline = True
         Me.txtEmpList1.Name = "txtEmpList1"
         Me.txtEmpList1.ReadOnly = True
-        Me.txtEmpList1.Size = New System.Drawing.Size(100, 127)
-        Me.txtEmpList1.TabIndex = 6
+        Me.txtEmpList1.Size = New System.Drawing.Size(127, 127)
+        Me.txtEmpList1.TabIndex = 4
         Me.EmpTooltip.SetToolTip(Me.txtEmpList1, "List of the units for employee 1 will be displayed here")
         '
         'txtEmpList2
         '
         Me.txtEmpList2.BackColor = System.Drawing.SystemColors.Window
-        Me.txtEmpList2.Location = New System.Drawing.Point(232, 143)
+        Me.txtEmpList2.Location = New System.Drawing.Point(234, 143)
         Me.txtEmpList2.Multiline = True
         Me.txtEmpList2.Name = "txtEmpList2"
         Me.txtEmpList2.ReadOnly = True
-        Me.txtEmpList2.Size = New System.Drawing.Size(100, 127)
+        Me.txtEmpList2.Size = New System.Drawing.Size(132, 127)
         Me.txtEmpList2.TabIndex = 7
         Me.EmpTooltip.SetToolTip(Me.txtEmpList2, "List of the units for employee 2 will be displayed here")
         '
@@ -126,8 +126,8 @@ Partial Class frmAverageEmployee
         Me.txtEmpList3.Multiline = True
         Me.txtEmpList3.Name = "txtEmpList3"
         Me.txtEmpList3.ReadOnly = True
-        Me.txtEmpList3.Size = New System.Drawing.Size(100, 127)
-        Me.txtEmpList3.TabIndex = 8
+        Me.txtEmpList3.Size = New System.Drawing.Size(138, 127)
+        Me.txtEmpList3.TabIndex = 10
         Me.EmpTooltip.SetToolTip(Me.txtEmpList3, "List of the units for employee 3 will be displayed here")
         '
         'lblEmpOutput1
@@ -135,18 +135,18 @@ Partial Class frmAverageEmployee
         Me.lblEmpOutput1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lblEmpOutput1.Location = New System.Drawing.Point(69, 273)
         Me.lblEmpOutput1.Name = "lblEmpOutput1"
-        Me.lblEmpOutput1.Size = New System.Drawing.Size(100, 23)
-        Me.lblEmpOutput1.TabIndex = 9
+        Me.lblEmpOutput1.Size = New System.Drawing.Size(127, 23)
+        Me.lblEmpOutput1.TabIndex = 5
         Me.lblEmpOutput1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.EmpTooltip.SetToolTip(Me.lblEmpOutput1, "Average of the units for employee 1 will be displayed")
         '
         'lblEmpOutput3
         '
         Me.lblEmpOutput3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblEmpOutput3.Location = New System.Drawing.Point(395, 273)
+        Me.lblEmpOutput3.Location = New System.Drawing.Point(396, 273)
         Me.lblEmpOutput3.Name = "lblEmpOutput3"
-        Me.lblEmpOutput3.Size = New System.Drawing.Size(100, 23)
-        Me.lblEmpOutput3.TabIndex = 10
+        Me.lblEmpOutput3.Size = New System.Drawing.Size(137, 23)
+        Me.lblEmpOutput3.TabIndex = 11
         Me.lblEmpOutput3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.EmpTooltip.SetToolTip(Me.lblEmpOutput3, "Average of the units for employee 3 will be displayed")
         '
@@ -155,8 +155,8 @@ Partial Class frmAverageEmployee
         Me.lblEmpOutput2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lblEmpOutput2.Location = New System.Drawing.Point(232, 273)
         Me.lblEmpOutput2.Name = "lblEmpOutput2"
-        Me.lblEmpOutput2.Size = New System.Drawing.Size(100, 23)
-        Me.lblEmpOutput2.TabIndex = 11
+        Me.lblEmpOutput2.Size = New System.Drawing.Size(134, 23)
+        Me.lblEmpOutput2.TabIndex = 8
         Me.lblEmpOutput2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.EmpTooltip.SetToolTip(Me.lblEmpOutput2, "Average of the units for employee 2 will be displayed")
         '
@@ -165,7 +165,7 @@ Partial Class frmAverageEmployee
         Me.lblAvgOutput.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lblAvgOutput.Location = New System.Drawing.Point(69, 308)
         Me.lblAvgOutput.Name = "lblAvgOutput"
-        Me.lblAvgOutput.Size = New System.Drawing.Size(426, 23)
+        Me.lblAvgOutput.Size = New System.Drawing.Size(464, 23)
         Me.lblAvgOutput.TabIndex = 12
         Me.lblAvgOutput.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.EmpTooltip.SetToolTip(Me.lblAvgOutput, "FInal average of the averages for the three employees")
@@ -185,7 +185,7 @@ Partial Class frmAverageEmployee
         Me.btnExit.Location = New System.Drawing.Point(395, 359)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(100, 23)
-        Me.btnExit.TabIndex = 14
+        Me.btnExit.TabIndex = 15
         Me.btnExit.Text = "E&xit"
         Me.EmpTooltip.SetToolTip(Me.btnExit, "Click to exit the form")
         Me.btnExit.UseVisualStyleBackColor = True
@@ -196,7 +196,7 @@ Partial Class frmAverageEmployee
         Me.btnReset.Location = New System.Drawing.Point(232, 359)
         Me.btnReset.Name = "btnReset"
         Me.btnReset.Size = New System.Drawing.Size(100, 23)
-        Me.btnReset.TabIndex = 15
+        Me.btnReset.TabIndex = 14
         Me.btnReset.Text = "&Reset"
         Me.EmpTooltip.SetToolTip(Me.btnReset, "Click to reset the form ")
         Me.btnReset.UseVisualStyleBackColor = True
@@ -228,6 +228,7 @@ Partial Class frmAverageEmployee
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmAverageEmployee"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Average units shipped by employee"
         Me.ResumeLayout(False)
         Me.PerformLayout()

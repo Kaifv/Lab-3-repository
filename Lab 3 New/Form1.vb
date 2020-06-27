@@ -126,15 +126,15 @@ Public Class frmAverageEmployee
                         dayCounter = 0
                     End If
                 Else
-                    MessageBox.Show("Please enter a number in range")
+                    MessageBox.Show(" ERROR!" & vbCrLf & "Please enter a number in range")
                     txtUnitEntered.Focus()
                 End If
             Else
-                MessageBox.Show("Please enter a  whole number")
+                MessageBox.Show(" ERROR!" & vbCrLf & "Please enter a  whole number")
                 txtUnitEntered.Focus()
             End If
         Else
-            MessageBox.Show("Please enter a number")
+            MessageBox.Show(" ERROR!" & vbCrLf & "Please enter a numeric value")
             txtUnitEntered.Focus()
         End If
     End Sub
